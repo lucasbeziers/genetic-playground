@@ -1,10 +1,7 @@
 import random
 import numpy as np
 from src.individual import Individual
-from src.utils import GenesType, FitnessName
-
-default_max_integer_genes_type = 10
-default_max_float_genes_type = 1
+from src.utils import FitnessName
 
 # Class Population
 class Population:
@@ -43,8 +40,8 @@ class Population:
             self.population.sort(key=lambda x: x.fitness_score, reverse=True)
             print(f'Best fitness is {self.population[0].fitness_score} by {self.population[0].genes}')
 
-            # If the optimal solution is found (e.g., max sum of genes)
-            if self.population[0].fitness_score == self.genes_length:
+            # If the optimal solution is found : stop
+            if self.population[0].fitness_score == self.population[0].fitness.optimal_solution:
                 print(f'Optimal solution found at generation {generation}!')
                 self.optimal_generation = generation
                 break

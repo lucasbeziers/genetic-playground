@@ -1,4 +1,3 @@
-import pytest
 from src.utils import FitnessName
 from src.fitness import Fitness
 
