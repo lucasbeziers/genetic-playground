@@ -1,6 +1,5 @@
-import pytest
 from src.population import Population
-from src.utils import GenesType
+from src.utils import GenesType, FitnessName
 from src.individual import Individual
 
 # Test initialization of the population class
@@ -46,7 +45,7 @@ def test_selection():
     
     # Set random fitness values for testing selection
     for i, individual in enumerate(population.population):
-        individual.fitness = i + 1  # Fitness values from 1 to population_size
+        individual.fitness_score = i + 1  # Fitness values from 1 to population_size
     
     # Ensure selection returns two individuals
     parent1, parent2 = population.selection()
@@ -64,17 +63,19 @@ def test_evolve():
     max_generations = 10
     genes_type = GenesType.INTEGER
     genes_max_value = 10
+    fitness_name=FitnessName.EVEN
 
     population = Population(population_size=population_size,
                             mutation_rate=mutation_rate,
                             genes_length=genes_length,
                             max_generations=max_generations,
                             genes_type=genes_type,
-                            genes_max_value=genes_max_value)
+                            genes_max_value=genes_max_value,
+                            fitness_name=fitness_name)
 
     # Mock fitness values to force early convergence
     for individual in population.population:
-        individual.fitness = genes_length - 1
+        individual.fitness_score = genes_length - 1
 
     # Run evolution process
     population.evolve()
@@ -91,13 +92,15 @@ def test_crossover_in_population():
     max_generations = 10
     genes_type = GenesType.INTEGER
     genes_max_value = 10
+    fitness_name=FitnessName.EVEN
 
     population = Population(population_size=population_size,
                             mutation_rate=mutation_rate,
                             genes_length=genes_length,
                             max_generations=max_generations,
                             genes_type=genes_type,
-                            genes_max_value=genes_max_value)
+                            genes_max_value=genes_max_value,
+                            fitness_name=fitness_name)
     
     # Test crossover of selected parents
     parent1, parent2 = population.selection()
@@ -121,13 +124,15 @@ def test_mutation_in_population():
     max_generations = 10
     genes_type = GenesType.INTEGER
     genes_max_value = 10
+    fitness_name=FitnessName.EVEN
 
     population = Population(population_size=population_size,
                             mutation_rate=mutation_rate,
                             genes_length=genes_length,
                             max_generations=max_generations,
                             genes_type=genes_type,
-                            genes_max_value=genes_max_value)
+                            genes_max_value=genes_max_value,
+                            fitness_name=fitness_name)
     
     # Test mutation of individuals in the population
     for individual in population.population:

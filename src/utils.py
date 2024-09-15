@@ -2,10 +2,10 @@ from enum import Enum
 
 # Possible genes
 class GenesType(Enum):
-    INTEGER = "integer"
-    FLOAT = "float"
+    INTEGER = "Integer"
+    FLOAT = "Float"
 
 # Possible fitness functions
 class FitnessName(Enum):
-    SUM = "sum"
-    EVEN = "even"
+    SUM = "Sum"
+    EVEN = "Even"
