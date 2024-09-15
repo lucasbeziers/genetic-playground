@@ -17,6 +17,6 @@ class Fitness:
         
         if fitness_name is FitnessName.EVEN:
             self.name = fitness_name
-            self.function = even_function
+            self.function = lambda genes : even_function(genes)
             self.optimal_solution = genes_length
     

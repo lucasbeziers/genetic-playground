@@ -29,7 +29,7 @@ class Individual:
         crossover_point = randint(1, self.genes_length - 1)
         child1_genes = self.genes[:crossover_point] + partner.genes[crossover_point:]
         child2_genes = partner.genes[:crossover_point] + self.genes[crossover_point:]
-        return Individual(genes_type=self.genes_type, genes=child1_genes, genes_max_value=self.genes_max_value), Individual(genes_type=self.genes_type, genes=child2_genes, genes_max_value=self.genes_max_value)
+        return Individual(genes_type=self.genes_type, genes=child1_genes, genes_max_value=self.genes_max_value, fitness_name=self.fitness.name), Individual(genes_type=self.genes_type, genes=child2_genes, genes_max_value=self.genes_max_value, fitness_name=self.fitness.name)
     
     def mutate(self, mutation_rate):
         # Mutate based on mutation rate

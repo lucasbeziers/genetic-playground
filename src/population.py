@@ -19,7 +19,7 @@ class Population:
 
     # Creates an initial random population
     def create_population(self):
-        return [Individual(genes_type=self.genes_type,genes_max_value=self.genes_max_value, genes_length=self.genes_length) for _ in range(self.population_size)]
+        return [Individual(genes_type=self.genes_type,genes_max_value=self.genes_max_value, genes_length=self.genes_length, fitness_name=self.fitness_name) for _ in range(self.population_size)]
 
     # Selects two parents using a tournament selection
     def selection(self):
@@ -34,17 +34,16 @@ class Population:
     # Evolves the population over multiple generations
     def evolve(self):
         for generation in range(self.max_generations):
-            print(f'Generation {generation}')
+            # print(f'Generation {generation}')
 
             # Sort the population by fitness
             self.population.sort(key=lambda x: x.fitness_score, reverse=True)
-            print(f'Best fitness is {self.population[0].fitness_score} by {self.population[0].genes}')
+            print(f'Generation {generation}: {self.population[0].genes} ({self.population[0].fitness_score})')
 
             # If the optimal solution is found : stop
             if self.population[0].fitness_score == self.population[0].fitness.optimal_solution:
-                print(f'Optimal solution found at generation {generation}!')
-                self.optimal_generation = generation
-                break
+                # print(f'Optimal solution found at generation {generation}!')
+                return True, generation, self.population[0]
 
             # Selection, crossover, and mutation to create the next generation
             new_population = []
@@ -58,3 +57,6 @@ class Population:
 
             # Replace the current population
             self.population = new_population[:self.population_size]
+        
+        # Optimal solution not found
+        return False, generation, self.population[0]
