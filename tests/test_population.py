@@ -116,7 +116,7 @@ def test_crossover_in_population():
 # Test mutation in the population
 def test_mutation_in_population():
     population_size = 10
-    mutation_rate = 0.5  # High mutation rate for testing
+    mutation_rate = 1  # High mutation rate for testing
     genes_length = 5
     max_generations = 10
     genes_type = GenesType.INTEGER

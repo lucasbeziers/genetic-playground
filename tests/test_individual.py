@@ -1,4 +1,4 @@
-from src.utils import GenesType
+from src.utils import GenesType, FitnessName
 from src.individual import Individual
 
 # Test the initialization of Individual instances

@@ -1,9 +1,10 @@
 from random import random, randint, uniform
-from src.utils import GenesType
+from src.utils import GenesType, FitnessName
+from src.fitness import Fitness
 
 # Class Individual
 class Individual:
-    def __init__(self, genes_type, genes_max_value=1, genes_length=10, genes=None):
+    def __init__(self, genes_type:GenesType, fitness_name=FitnessName.SUM, genes_max_value=1, genes_length=10, genes=None):
         # If no genes provided, generate them
         if genes is None:
             if genes_type == GenesType.INTEGER:
@@ -13,6 +14,7 @@ class Individual:
         else:
             self.genes = genes[::]
             genes_length = len(genes)
+        self.fitness = Fitness(fitness_name=fitness_name, genes_length=genes_length, genes_max_value=genes_max_value)
         self.genes_length = genes_length
         self.genes_type = genes_type
         self.genes_max_value = genes_max_value
@@ -20,8 +22,7 @@ class Individual:
 
     # Fitness calculation (must be customized for the problem)
     def calculate_fitness(self):
-        # Example: maximize the sum of genes (this should be modified according to the problem)
-        self.fitness = sum(self.genes)
+        self.fitness_score = self.fitness.function(self.genes)
 
     def crossover(self, partner):
         # Single-point crossover
@@ -42,4 +43,4 @@ class Individual:
     
     # String representation for debugging
     def __repr__(self):
-        return f'Individual(genes={self.genes}, fitness={self.fitness})'
+        return f'Individual(genes={self.genes}, fitness={self.fitness_score})'

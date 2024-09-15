@@ -5,6 +5,7 @@ class GenesType(Enum):
     INTEGER = "integer"
     FLOAT = "float"
 
-# Different fitness functions
-def sum_genes(genes):
-    return sum(genes)
+# Possible fitness functions
+class FitnessName(Enum):
+    SUM = "sum"
+    EVEN = "even"
