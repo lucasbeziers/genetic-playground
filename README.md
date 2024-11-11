@@ -55,7 +55,7 @@ Here's a quick example of what the app looks like:
 <img src="assets/example2.png" alt="Genetic Algorithm Playground Screenshot" width="600">
 
 ## Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Contributions are welcome: feel free to open issues or submit pull requests.
 
 ## License
 This project is licensed under the MIT License.
