@@ -2,6 +2,10 @@
 
 Welcome to the **Genetic Algorithm Playground**! This is an interactive Streamlit web application that lets you experiment with genetic algorithms. It's designed to help you understand how different parameters influence the optimization process and to provide a hands-on experience with one of the most popular evolutionary algorithms.
 
+### 🌐 Try It Out Now!
+The app is live and ready for you to explore:  
+**[Genetic Algorithm Playground](https://genetic-playground.streamlit.app/)**
+
 ## Features
 - 🌍 **Customize Population Settings**: Adjust parameters like population size, mutation rate, and the maximum number of generations.
 - 👤 **Configure Individuals**: Define genome size, type, and value range to explore different solution spaces.
