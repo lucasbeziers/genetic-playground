@@ -38,7 +38,7 @@ class Population:
 
             # Sort the population by fitness
             self.population.sort(key=lambda x: x.fitness_score, reverse=True)
-            print(f'Generation {generation}: {self.population[0].genes} ({self.population[0].fitness_score})')
+            # print(f'Generation {generation}: {self.population[0].genes} ({self.population[0].fitness_score})')
 
             # If the optimal solution is found : stop
             if self.population[0].fitness_score == self.population[0].fitness.optimal_solution:

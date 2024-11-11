@@ -9,3 +9,4 @@ class GenesType(Enum):
 class FitnessName(Enum):
     SUM = "Sum"
     EVEN = "Even"
+    ALTERNATE = "Alternate"
