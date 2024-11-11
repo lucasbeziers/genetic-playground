@@ -51,7 +51,8 @@ Welcome to the **Genetic Algorithm Playground**! This is an interactive Streamli
 ## Example
 Here's a quick example of what the app looks like:
 
-![Genetic Algorithm Playground Screenshot](assets/example1.png)
+<img src="assets/example1.png" alt="Genetic Algorithm Playground Screenshot" width="600">
+<img src="assets/example2.png" alt="Genetic Algorithm Playground Screenshot" width="600">
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
