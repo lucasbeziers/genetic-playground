@@ -16,7 +16,6 @@ The app is live and ready for you to explore:
 
 ### Prerequisites
 - Python 3.8+
-- Streamlit
 
 ### Installation
 1. Clone this repository:
